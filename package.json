@@ -1,0 +1,60 @@
+{
+  "name": "secret-santa",
+  "productName": "secret-santa",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [],
+  "author": "Dean Gaffney",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DeanGaffney/secret-santa.git"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "secret_santa"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "electron-is-dev": "^1.0.1",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.29",
+    "@electron-forge/maker-deb": "^6.0.0-beta.29",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.29",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.29",
+    "@electron-forge/maker-zip": "^6.0.0-beta.29",
+    "electron": "3.0.9"
+  }
+}
